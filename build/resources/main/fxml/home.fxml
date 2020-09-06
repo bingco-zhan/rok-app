@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="home" prefHeight="484.0" prefWidth="754.0" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rok.app.handler.HomeHandler">
+    <HBox minWidth="723.0" prefHeight="482.0">
+        <AnchorPane prefHeight="485.0" prefWidth="62.0" styleClass="menu">
+            <padding>
+                <Insets />
+            </padding>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" styleClass="head-img" />
+            <FontAwesomeIconView glyphName="COMMENT" layoutY="118.0" size="20" textAlignment="CENTER" wrappingWidth="62.0" />
+            <FontAwesomeIconView glyphName="ADDRESS_BOOK" layoutY="171.0" size="20" textAlignment="CENTER" wrappingWidth="62.0" />
+            <FontAwesomeIconView glyphName="TH_LARGE" layoutY="224.0" size="20" textAlignment="CENTER" wrappingWidth="62.0" />
+            <FontAwesomeIconView glyphName="REORDER" layoutY="451.0" size="22" textAlignment="CENTER" wrappingWidth="62.0" />
+        </AnchorPane>
+        <AnchorPane prefHeight="480.0" prefWidth="202.0" styleClass="list">
+            <VBox prefHeight="482.0" prefWidth="246.0">
+                <AnchorPane id="list-top" prefHeight="51.0" prefWidth="246.0">
+                    <TextField layoutX="24.0" layoutY="10.0" prefHeight="23.0" prefWidth="158.0" promptText="搜索">
+                  <padding>
+                     <Insets left="20.0" right="20.0" />
+                  </padding></TextField>
+               <Icons525View glyphName="SEARCH" layoutX="30.0" layoutY="27.0" />
+                    <Button layoutX="195.0" layoutY="11.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="13.0" textAlignment="CENTER">
+                      <graphic>
+                         <FontAwesomeIconView fontSmoothingType="LCD" glyphName="PLUS" size="14" textAlignment="CENTER" wrappingWidth="12.5" />
+                      </graphic>
+                  <font>
+                     <Font size="10.0" />
+                  </font>
+                    </Button>
+               <MaterialDesignIconView glyphName="CLOSE" layoutX="163.0" layoutY="26.0" />
+                </AnchorPane>
+                <ListView prefHeight="444.0" prefWidth="246.0">
+                    <fx:include source="list/item.fxml" />
+                    <fx:include source="list/item.fxml" />
+                    <fx:include source="list/item.fxml" />
+                    <fx:include source="list/item.fxml" />
+                </ListView>
+            </VBox>
+        </AnchorPane>
+        <AnchorPane prefHeight="484.0" prefWidth="452.0" styleClass="container" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="482.0" prefWidth="452.0">
+                <AnchorPane id="container-bar" prefHeight="28.0" prefWidth="462.0">
+                    <FontAwesomeIconView glyphName="MINUS" layoutX="404.0" layoutY="20.0" onMouseClicked="#doSmall" size="15" styleClass="small-icon" />
+                    <FontAwesomeIconView glyphName="CLOSE" layoutX="428.0" layoutY="19.0" onMouseClicked="#doExit" size="16" styleClass="exit-icon" />
+                </AnchorPane>
+                <AnchorPane id="container-title" prefHeight="37.0" prefWidth="415.0">
+                    <Label layoutX="26.0" prefHeight="28.0" prefWidth="363.0" text="龙傲天" />
+                </AnchorPane>
+                <AnchorPane id="container-msg" prefHeight="260.0" prefWidth="415.0">
+                    <ListView prefHeight="260.0" prefWidth="453.0">
+                        <fx:include source="container/left_msg.fxml"/>
+                        <fx:include source="container/right_msg.fxml"/>
+                        <fx:include source="container/left_msg.fxml"/>
+                        <fx:include source="container/right_msg.fxml"/>
+                        <fx:include source="container/left_msg.fxml"/>
+                        <fx:include source="container/right_msg.fxml"/>
+                    </ListView>
+                </AnchorPane>
+                <AnchorPane id="container-edit" prefHeight="157.0" prefWidth="415.0">
+                    <VBox layoutX="-1.0" prefHeight="157.0" prefWidth="452.0">
+                        <AnchorPane prefHeight="34.0" prefWidth="415.0">
+                            <OctIconView glyphName="SMILEY" layoutX="22.0" layoutY="23.0" size="18" />
+                            <OctIconView glyphName="FILE_DIRECTORY" layoutX="53.0" layoutY="23.0" size="18" />
+                            <OctIconView glyphName="DEVICE_CAMERA_VIDEO" layoutX="416.0" layoutY="23.0" size="18" />
+                        </AnchorPane>
+                        <AnchorPane prefHeight="124.0" prefWidth="415.0">
+                            <TextArea layoutX="15.0" prefHeight="89.0" prefWidth="424.0" />
+                            <Button layoutX="376.0" layoutY="93.0" text="发送(S)" />
+                        </AnchorPane>
+                    </VBox>
+                </AnchorPane>
+            </VBox>
+        </AnchorPane>
+    </HBox>
+</AnchorPane>

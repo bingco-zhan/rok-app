@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+group 'com.rok.app'
+version '1.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+targetCompatibility = 11
+sourceCompatibility = 11
+
+ext {
+    gsonVersion = '2.8.5'
+    commonsBeanutilsVersion = '1.9.3'
+    hibernateValidatorVersion = '6.1.5.Final'
+    javaxELApiVersion = '3.0.0'
+    glassfishELVersion = '3.0.0'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile fileTree(dir:'libs/fontawesomefx' ,include : '*.jar')
+    compile group: 'com.google.code.gson', name: 'gson', version: gsonVersion
+    // https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils
+    compile group: 'commons-beanutils', name: 'commons-beanutils', version: commonsBeanutilsVersion
+    // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
+    compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: hibernateValidatorVersion
+    // https://mvnrepository.com/artifact/javax.el/javax.el-api
+    compile group: 'javax.el', name: 'javax.el-api', version: javaxELApiVersion
+    // https://mvnrepository.com/artifact/org.glassfish/javax.el
+    compile group: 'org.glassfish', name: 'javax.el', version: glassfishELVersion
+}
+
+javafx {
+    version = '12.0.2'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+    mainClassName = 'com.rok.app.Bootstrap'
+}

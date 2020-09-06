@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="409.0" prefWidth="270.0" styleClass="login" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rok.app.handler.LoginHandler">
+    <VBox prefHeight="424.0" prefWidth="270.0">
+        <AnchorPane fx:id="header" maxHeight="46.0" maxWidth="300.0" prefHeight="24.0" prefWidth="164.0">
+            <FontAwesomeIconView glyphName="MINUS" layoutX="228.0" layoutY="19.0" onMouseClicked="#doSmall" size="16" styleClass="small-icon" />
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="250.0" layoutY="18.0" onMouseClicked="#doExit" size="16" styleClass="exit-icon" />
+        </AnchorPane>
+        <AnchorPane fx:id="container" prefHeight="401.0" prefWidth="270.0">
+            <ImageView fitHeight="144.0" fitWidth="158.0" layoutX="61.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../img/wc.jpg" />
+            </ImageView>
+            <TextField layoutX="30.0" layoutY="159.0" prefHeight="34.0" prefWidth="211.0" userData="{name: 'username'}" />
+            <Label id="usernameLabel" layoutX="30.0" layoutY="198.0" prefHeight="15.0" prefWidth="211.0" />
+            <PasswordField layoutX="30.0" layoutY="218.0" prefHeight="34.0" prefWidth="211.0" userData="{name: 'password'}" />
+            <Label id="passwordLabel" layoutX="30.0" layoutY="255.0" prefHeight="15.0" prefWidth="211.0" />
+            <Button layoutX="30.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#doSubmit" prefHeight="34.0" prefWidth="211.0" text="LOGIN" />
+        </AnchorPane>
+    </VBox>
+</AnchorPane>

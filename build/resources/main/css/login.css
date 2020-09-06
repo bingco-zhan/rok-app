@@ -1,0 +1,56 @@
+/** 登录界面整体样式 */
+.login {
+    -fx-background-color: white;
+    -fx-font-family: "Microsoft YaHei";
+    -fx-border-width: 1px;
+    -fx-border-color: #a4a4a4;
+}
+/* end */
+
+
+/** 头部按钮样式 */
+.exit-icon {
+    -fx-fill: #989797;
+}
+
+.exit-icon:hover {
+    -fx-fill: #404040;
+}
+
+.exit-icon:pressed {
+    -fx-fill: #1a1a1a;
+}
+
+.small-icon {
+    -fx-fill: #989797;
+}
+
+.small-icon:hover {
+    -fx-fill: #404040;
+}
+
+.small-icon:pressed {
+    -fx-fill: #1a1a1a;
+}
+/** end */
+
+/** 登录按钮 */
+.login .button {
+    -fx-background-color: #66c13a;
+    -fx-background-insets: 0;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-font-family: "Courier New";
+    -fx-text-fill: white;
+}
+
+.login .button:pressed {
+    -fx-background-color: #4ca422;
+}
+/** end */
+
+/** 提示标签 */
+#usernameLabel, #passwordLabel {
+    -fx-text-fill: red;
+}
+/** end */
