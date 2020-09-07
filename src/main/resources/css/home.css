@@ -1,4 +1,6 @@
 /** 主页整体颜色配置 */
+@import url('/css/login.css');
+
 .menu {
     -fx-background-color: #29282a;
     -fx-font-family: "Microsoft YaHei";
@@ -17,31 +19,6 @@
 }
 /** end */
 
-/** 头部按钮样式 */
-.exit-icon {
-    -fx-fill: #989797;
-}
-
-.exit-icon:hover {
-    -fx-fill: #404040;
-}
-
-.exit-icon:pressed {
-    -fx-fill: #1a1a1a;
-}
-
-.small-icon {
-    -fx-fill: #989797;
-}
-
-.small-icon:hover {
-    -fx-fill: #404040;
-}
-
-.small-icon:pressed {
-    -fx-fill: #1a1a1a;
-}
-/** end */
 
 /** 头像 */
 .menu .head-img {
@@ -204,7 +181,7 @@
 }
 
 
-.left-msg .msg-item {
+.item-msg .item-msg-speek {
     -fx-background-color: white;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
@@ -212,7 +189,41 @@
     -fx-border-width: 1px;
 }
 
-.left-msg .head-img {
+.item-msg .head-img {
     -fx-image: url('/img/hand/1.jpg');
+}
+/** end */
+
+/** 消息窗体 */
+.container .list-view {
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-background-color: #f1f1f1;
+}
+
+.container .list-cell:even {
+    -fx-background-color: #f1f1f1;
+}
+
+.container .list-cell:odd {
+    -fx-background-color: #f1f1f1;
+}
+
+.container .list-cell:empty {
+    -fx-border-width: 0;
+    -fx-background-color: #f1f1f1;
+}
+
+.container .list-cell:selected {
+    -fx-border-width: 0;
+    -fx-background-color: #f1f1f1;
+}
+
+.item-msg .item-msg-user {
+    -fx-text-fill: #8a8a8a;
+}
+
+.item-msg .item-msg-speek {
+    -fx-text-fill: #3b3b3b;
 }
 /** end */

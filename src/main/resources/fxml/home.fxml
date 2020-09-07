@@ -65,12 +65,12 @@
                 </AnchorPane>
                 <AnchorPane id="container-msg" prefHeight="260.0" prefWidth="415.0">
                     <ListView prefHeight="260.0" prefWidth="453.0">
-                        <fx:include source="container/left_msg.fxml"/>
-                        <fx:include source="container/right_msg.fxml"/>
-                        <fx:include source="container/left_msg.fxml"/>
-                        <fx:include source="container/right_msg.fxml"/>
-                        <fx:include source="container/left_msg.fxml"/>
-                        <fx:include source="container/right_msg.fxml"/>
+                        <fx:include source="container/left_msg.fxml" />
+                        <fx:include source="container/right_msg.fxml" />
+                        <fx:include source="container/left_msg.fxml" />
+                        <fx:include source="container/right_msg.fxml" />
+                        <fx:include source="container/left_msg.fxml" />
+                        <fx:include source="container/right_msg.fxml" />
                     </ListView>
                 </AnchorPane>
                 <AnchorPane id="container-edit" prefHeight="157.0" prefWidth="415.0">
