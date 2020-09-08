@@ -1,0 +1,79 @@
+/** 主页整体颜色配置 */
+@import url('../../css/login.css');
+
+.container {
+    -fx-background-color: #f3f3f3;
+    -fx-border-width: 1px 1px 1px 0;
+    -fx-border-color: #e6e5e4;
+    -fx-font-family: "Microsoft YaHei";
+}
+/** end */
+
+/** 好友名称 */
+#container-title > .label {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-text-fill: #515151;
+}
+/** end */
+
+/** 消息区域 */
+#container-msg {
+    -fx-border-width: 1px 0 1px 0;
+    -fx-border-color: #d7d7d7;
+}
+/** end */
+
+/** 用户消息操作区域 */
+#container-edit .glyph-icon {
+    -fx-fill: #838383;
+}
+
+#container-edit .text-area, #container-edit .text-area .content {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, #f3f3f3, transparent, #f3f3f3;
+}
+
+#container-edit .text-area:focused, #container-edit .text-area:focused .content {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+#container-edit .button {
+    -fx-background-insets: 0;
+    -fx-background-color: #e9e9e9;
+    -fx-border-width: 1px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: #c8c8c8;
+    -fx-text-fill: #676767;
+}
+
+#container-edit .button:hover {
+    -fx-background-color: #0fab0f;
+    -fx-border-color: #0fab0f;
+    -fx-text-fill: white;
+}
+
+#container-edit .button:pressed {
+    -fx-background-color: #12bf12;
+    -fx-border-color: #12bf12;
+    -fx-text-fill: white;
+}
+
+.background-withe {
+    -fx-background-color: white;
+}
+/** end */
+
+/** 消息窗体 */
+.container .list-view {
+    -fx-border-width: 1;
+    -fx-background-insets: 0;
+    -fx-background-color: #f1f1f1;
+}
+
+.container .list-cell:even, .container .list-cell:odd,
+.container .list-cell:empty, .container .list-cell:selected {
+    -fx-background-color: #f1f1f1;
+}
+/** end */

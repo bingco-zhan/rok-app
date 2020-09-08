@@ -1,0 +1,56 @@
+.list {
+    -fx-background-color: #e6e5e4;
+    -fx-font-family: "Microsoft YaHei";
+}
+
+/** 搜索栏样式 */
+#list-top > .text-field {
+    -fx-background-insets: 0;
+    -fx-border-radius: 3px;
+    -fx-background-color: #d7d7d7;
+    -fx-background-radius: 3px;
+    -fx-border-color: #d7d7d7;
+    -fx-border-width: 1px;
+}
+
+#list-top > .text-field:focused {
+    -fx-background-color: white;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+#list-top > .button {
+    -fx-background-insets: 0;
+    -fx-background-color: #d7d7d7;
+}
+
+#list-top > .button > .glyph-icon {
+    -fx-fill: #989797;
+}
+
+#list-top > .button:hover {
+    -fx-background-color: #c6c6c6;
+}
+
+#list-top > .button:hover > .glyph-icon {
+    -fx-fill: #676767;
+}
+/** end */
+
+
+
+/** 聊天列表 */
+.list .list-view {
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-background-color: #e6e5e4;
+}
+
+.list .list-cell:even, .list .list-cell:odd, .list .list-cell:empty {
+    -fx-background-color: #e6e5e4;
+}
+
+.list .list-cell:selected {
+    -fx-background-color: #c6c6c6;
+}
+/** end */

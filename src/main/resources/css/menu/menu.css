@@ -1,0 +1,17 @@
+.menu {
+    -fx-background-color: #29282a;
+    -fx-font-family: "Microsoft YaHei";
+}
+
+/** 头像 */
+.menu > .head-img {
+    -fx-image: url('../../img/hand/1.jpg');
+}
+/** end */
+
+/** 菜单按钮 */
+.menu > .glyph-icon {
+    -fx-fill: #6e6e6e;
+}
+/** end */
+

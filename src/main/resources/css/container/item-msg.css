@@ -1,0 +1,35 @@
+.item-msg {
+    -fx-font-family: "Microsoft YaHei";
+}
+
+.item-msg .item-msg-speek {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #bfbfbf;
+    -fx-border-width: 1px;
+}
+
+.item-msg > .item-msg-box {
+    -fx-padding: 3px 3px 3px 3px;
+}
+
+.item-msg > .item-msg-box > .head-img {
+    -fx-image: url('../../img/hand/1.jpg');
+}
+
+.item-msg > .item-msg-box .item-msg-title > .label {
+    -fx-text-fill: #8a8a8a;
+}
+
+.item-msg > .item-msg-box .item-msg-bubble {
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #7c7c7c;
+    -fx-padding: 3px 10px 3px 10px;
+}
+
+.item-msg > .item-msg-box .item-msg-bubble > .label {
+    -fx-text-fill: #404040;
+}
+

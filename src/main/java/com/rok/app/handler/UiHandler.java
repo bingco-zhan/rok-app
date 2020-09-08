@@ -7,6 +7,7 @@ import javafx.event.EventTarget;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.apache.commons.beanutils.BeanUtils;
@@ -58,20 +59,24 @@ public abstract class UiHandler {
         }
     }
 
-    public void bindMove(Node node) {
-        node.setOnMousePressed(event -> {
+    /**
+     * 窗口拖动事件绑定
+     * @param source 组件
+     */
+    public void bindDrag(Node source) {
+        source.setOnMousePressed(event -> {
             EventTarget target = event.getTarget();
-            if (target.equals(node)) {
+            if (target.equals(source)) {
                 Window window = ((Node) target).getScene().getWindow();
                 MX = window.getX() - event.getScreenX();
                 MY = window.getY() - event.getScreenY();
-                node.setCursor(Cursor.CLOSED_HAND);
+                source.setCursor(Cursor.CLOSED_HAND);
             }
         });
 
-        node.setOnMouseDragged(event -> {
+        source.setOnMouseDragged(event -> {
             EventTarget target = event.getTarget();
-            if (target.equals(node)) {
+            if (target.equals(source)) {
                 Window window = ((Node) target).getScene().getWindow();
                 if (((Stage) window).isMaximized()) {
                     ((Stage) window).setMaximized(false);
@@ -81,26 +86,52 @@ public abstract class UiHandler {
             }
         });
 
-        node.setOnMouseReleased(event -> node.setCursor(Cursor.DEFAULT));
+        source.setOnMouseReleased(event -> source.setCursor(Cursor.DEFAULT));
     }
 
+    /**
+     * 检索子组件
+     * @param parent 父组件
+     * @param selector 选择器
+     * @param clazz 子组件类型
+     * @return 如果命中则放回 clazz 类型组件,否则返回null
+     */
     @SuppressWarnings("unchecked")
-    public <T> T $(Node node, String selector, Class<T> clazz) {
-        Node lookup = node.lookup(selector);
+    public <T> T $(Node parent, String selector, Class<T> clazz) {
+        Node lookup = parent.lookup(selector);
         if (clazz.isInstance(lookup))
             return (T) lookup;
         else return null;
     }
 
-    @SuppressWarnings("unchecked")
-    public <T> T $(Node node, String selector, int index, Class<T> clazz) {
-        Node[] nodes = node.lookupAll(selector).toArray(new Node[] {null});
-        if (nodes.length < index) {
-            return null;
+    /**
+     * 最小化
+     * @param event 鼠标事件
+     */
+    public void doSmall(MouseEvent event) {
+        EventTarget target = event.getTarget();
+        if (target instanceof Node) {
+            Window window = ((Node) target).getScene()
+                    .getWindow();
+            if (window instanceof Stage) {
+                ((Stage) window).setIconified(true);
+            }
         }
-        Node lookup = nodes[index - 1];
-        if (clazz.isInstance(lookup))
-            return (T) lookup;
-        else return null;
+
+    }
+
+    /**
+     * 最大化
+     * @param event 鼠标事件
+     */
+    public void doExit(MouseEvent event) {
+        EventTarget target = event.getTarget();
+        if (target instanceof Node) {
+            Window window = ((Node) target).getScene()
+                    .getWindow();
+            if (window instanceof Stage) {
+                ((Stage) window).close();
+            }
+        }
     }
 }

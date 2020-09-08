@@ -44,26 +44,11 @@ public class LoginHandler extends UiHandler implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        bindMove(header);
-    }
-
-    public void doExit(MouseEvent event) {
-        Window window = container.getScene()
-                .getWindow();
-        if (window instanceof Stage) {
-            ((Stage) window).close();
-        }
-    }
-
-    public void doSmall(MouseEvent event) {
-        Window window = container.getScene()
-                .getWindow();
-        if (window instanceof Stage) {
-            ((Stage) window).setIconified(true);
-        }
+        bindDrag(header);
     }
 
     public void doSubmit(MouseEvent event) throws IOException {
+        // 表单校验
 //        Login login = serializer(".text-field", container, Login.class);
 //        boolean hasError = Validator.V(login).onError((field, violation) -> {
 //            if ("username".equals(field)) {
@@ -77,7 +62,10 @@ public class LoginHandler extends UiHandler implements Initializable {
 //        if (hasError) {
 //            return;
 //        }
-        // TODO - 后台登录操作 ///////
+
+        // TODO - 后台登录操作
+
+        // 登录成功
         Parent home = FXMLLoader.load(LoginHandler.class.getResource("/fxml/home.fxml"));
         EventTarget target = event.getTarget();
         Window window = ((Node) target).getScene()

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="container" prefHeight="484.0" prefWidth="452.0" styleClass="container" stylesheets="@../../css/container/container.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rok.app.handler.ContainerHandler">
+    <VBox prefHeight="482.0" prefWidth="452.0">
+        <AnchorPane id="container-bar" prefHeight="28.0" prefWidth="462.0">
+            <FontAwesomeIconView glyphName="MINUS" layoutX="404.0" layoutY="20.0" onMouseClicked="#doSmall" size="15" styleClass="small-icon" />
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="428.0" layoutY="19.0" onMouseClicked="#doExit" size="16" styleClass="exit-icon" />
+        </AnchorPane>
+        <AnchorPane id="container-title" prefHeight="37.0" prefWidth="415.0">
+            <Label layoutX="26.0" prefHeight="28.0" prefWidth="363.0" text="龙傲天" />
+        </AnchorPane>
+        <AnchorPane id="container-msg" prefHeight="260.0" prefWidth="415.0">
+            <ListView prefHeight="260.0" prefWidth="453.0">
+                <fx:include source="left_msg.fxml" />
+                <fx:include source="right_msg.fxml" />
+            </ListView>
+        </AnchorPane>
+        <AnchorPane id="container-edit" prefHeight="157.0" prefWidth="415.0">
+            <VBox layoutX="-1.0" prefHeight="157.0" prefWidth="452.0">
+                <AnchorPane prefHeight="34.0" prefWidth="415.0">
+                    <OctIconView glyphName="SMILEY" layoutX="22.0" layoutY="23.0" size="18" />
+                    <OctIconView glyphName="FILE_DIRECTORY" layoutX="53.0" layoutY="23.0" size="18" />
+                    <OctIconView glyphName="DEVICE_CAMERA_VIDEO" layoutX="416.0" layoutY="23.0" size="18" />
+                </AnchorPane>
+                <AnchorPane prefHeight="124.0" prefWidth="415.0">
+                    <TextArea fx:id="textEdit" layoutX="15.0" prefHeight="89.0" prefWidth="424.0" />
+                    <Button onMouseClicked="#doTalk" layoutX="376.0" layoutY="93.0" text="发送(S)" />
+                </AnchorPane>
+            </VBox>
+        </AnchorPane>
+    </VBox>
+</AnchorPane>

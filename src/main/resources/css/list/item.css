@@ -1,0 +1,21 @@
+.list-item {
+    -fx-font-family: "Microsoft YaHei";
+}
+
+.list-item > .list-item-image {
+    -fx-image: url('../../img/hand/1.jpg');
+}
+
+.list-item > .list-item-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #535353;
+}
+
+.list-item > .list-item-msg, .list-item > .list-item-time {
+    -fx-text-fill: #8a8a8a;
+}
+
+.list-item > .list-item-tips {
+    -fx-fill: #8a8a8a;
+}

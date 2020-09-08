@@ -4,11 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane fx:id="item" prefHeight="60.0" prefWidth="214.0" styleClass="list-item" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rok.app.handler.ListItemHandler">
-    <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="3.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" styleClass="list-item-image" />
-    <Label layoutX="53.0" layoutY="7.0" prefHeight="15.0" prefWidth="123.0" styleClass="list-item-title" text="龙傲天" />
-    <Label layoutX="179.0" layoutY="7.0" styleClass="list-item-time" text="15:09" />
-    <Label layoutX="53.0" layoutY="27.0" prefHeight="26.0" prefWidth="138.0" styleClass="list-item-msg" text="中午去哪吃？" />
-    <FontAwesomeIconView glyphName="BELL" layoutX="196.0" layoutY="44.0" styleClass="list-item-tips" />
+<AnchorPane fx:id="item" prefHeight="60.0" prefWidth="214.0" styleClass="list-item"
+            stylesheets="@../../css/list/item.css"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.rok.app.handler.ListItemHandler">
+    <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="3.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true"
+               styleClass="list-item-image"/>
+    <Label layoutX="53.0" layoutY="7.0" prefHeight="15.0" prefWidth="123.0" styleClass="list-item-title" text="龙傲天"/>
+    <Label layoutX="179.0" layoutY="7.0" styleClass="list-item-time" text="15:09"/>
+    <Label layoutX="53.0" layoutY="27.0" prefHeight="26.0" prefWidth="138.0" styleClass="list-item-msg" text="中午去哪吃？"/>
+    <FontAwesomeIconView glyphName="BELL" layoutX="196.0" layoutY="44.0" styleClass="list-item-tips"/>
 </AnchorPane>

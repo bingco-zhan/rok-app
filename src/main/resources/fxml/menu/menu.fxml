@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="menu" prefHeight="484.0" prefWidth="62.0" styleClass="menu" stylesheets="@../../css/menu/menu.css"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.rok.app.handler.MenuHandler">
+    <padding>
+        <Insets/>
+    </padding>
+    <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true"
+               styleClass="head-img"/>
+    <FontAwesomeIconView glyphName="COMMENT" layoutY="118.0" size="20" textAlignment="CENTER" wrappingWidth="62.0"/>
+    <FontAwesomeIconView glyphName="ADDRESS_BOOK" layoutY="171.0" size="20" textAlignment="CENTER"
+                         wrappingWidth="62.0"/>
+    <FontAwesomeIconView glyphName="TH_LARGE" layoutY="224.0" size="20" textAlignment="CENTER" wrappingWidth="62.0"/>
+    <FontAwesomeIconView glyphName="REORDER" layoutY="463.0" size="22" textAlignment="CENTER" wrappingWidth="62.0"/>
+</AnchorPane>
