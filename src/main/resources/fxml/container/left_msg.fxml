@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane fx:id="leftMsg" minHeight="54.0" prefWidth="415.0" styleClass="item-msg" stylesheets="@../../css/container/item-msg.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="54.0" prefWidth="415.0" styleClass="item-msg" stylesheets="@../../css/container/item-msg.css">
     <HBox prefWidth="415.0" styleClass="item-msg-box">
         <ImageView fitHeight="48.0" fitWidth="48.0" styleClass="head-img" />
         <AnchorPane prefHeight="48.0" prefWidth="361.0">

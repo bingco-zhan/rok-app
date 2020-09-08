@@ -1,10 +1,13 @@
 package com.rok.app.handler;
 
 import com.rok.app.ui.BubblePane;
+import com.rok.app.utils.Talk;
+import com.rok.app.utils.TalkBuilder;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -31,16 +34,13 @@ public class ContainerHandler extends UiHandler implements Initializable {
     private AnchorPane container;
 
     @FXML
-    private ListView<AnchorPane> msgView;
+    private ListView<Node> msgView;
 
     @FXML
     private TextArea textEdit;
 
     @FXML
     private BubblePane tooltip;
-
-    private final URL LeftMsgUrl = ContainerHandler.class.getResource("/fxml/container/left_msg.fxml");
-    private final URL RightMsgUrl = ContainerHandler.class.getResource("/fxml/container/right_msg.fxml");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -66,10 +66,11 @@ public class ContainerHandler extends UiHandler implements Initializable {
             textEdit.setText("");
             tooltip.show();
         } else {
-            AnchorPane leftMsg = FXMLLoader.load(LeftMsgUrl);
-            ObservableList<AnchorPane> items = msgView.getItems();
-            items.add(leftMsg);
+            Node msgPane = TalkBuilder.build(Talk.RIGHT_TALK, "骨王", text.trim());
+            ObservableList<Node> items = msgView.getItems();
+            items.add(msgPane);
             msgView.scrollTo(items.size());
+            textEdit.setText("");
         }
     }
 }
