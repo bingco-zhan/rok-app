@@ -1,14 +1,18 @@
 package com.rok.app.handler;
 
-import javafx.event.EventTarget;
+import com.rok.app.ui.BubblePane;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,7 +31,16 @@ public class ContainerHandler extends UiHandler implements Initializable {
     private AnchorPane container;
 
     @FXML
+    private ListView<AnchorPane> msgView;
+
+    @FXML
     private TextArea textEdit;
+
+    @FXML
+    private BubblePane tooltip;
+
+    private final URL LeftMsgUrl = ContainerHandler.class.getResource("/fxml/container/left_msg.fxml");
+    private final URL RightMsgUrl = ContainerHandler.class.getResource("/fxml/container/right_msg.fxml");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,11 +59,17 @@ public class ContainerHandler extends UiHandler implements Initializable {
     }
 
 
-    public void doTalk(MouseEvent event) {
+    public void doTalk(MouseEvent event) throws IOException {
         // 发送了空文本
-        EventTarget target = event.getTarget();
-        if (target instanceof Button) {
-            Button button = (Button) target;
+        String text = textEdit.getText();
+        if (text.trim().isBlank()) {
+            textEdit.setText("");
+            tooltip.show();
+        } else {
+            AnchorPane leftMsg = FXMLLoader.load(LeftMsgUrl);
+            ObservableList<AnchorPane> items = msgView.getItems();
+            items.add(leftMsg);
+            msgView.scrollTo(items.size());
         }
     }
 }
