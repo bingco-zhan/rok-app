@@ -22,7 +22,7 @@ public class BubblePane extends AnchorPane {
     private final ParallelTransition transition;
 
     public BubblePane() {
-        FadeTransition fade = new FadeTransition(Duration.seconds(0.5), this);
+        FadeTransition fade = new FadeTransition(Duration.seconds(0.35), this);
         fade.setFromValue(0.0);
         fade.setToValue(1.0);
         BubblePane self = this;

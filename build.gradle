@@ -39,9 +39,10 @@ dependencies {
 
 javafx {
     version = '12.0.2'
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.web' ]
 }
 
 application {
-    mainClassName = 'com.rok.app.Bootstrap'
+    //mainClassName = 'com.rok.app.Bootstrap'
+    mainClassName = 'com.rok.app.EmojiTextAreaTest'
 }
