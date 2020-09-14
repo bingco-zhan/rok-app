@@ -1,22 +1,29 @@
 package com.rok.app.handler;
 
 import com.rok.app.ui.BubblePane;
+import com.rok.app.ui.BubbleStage;
 import com.rok.app.utils.Talk;
 import com.rok.app.utils.TalkBuilder;
+import de.jensd.fx.glyphs.octicons.OctIconView;
 import javafx.collections.ObservableList;
+import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
+import javafx.stage.Window;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -42,6 +49,10 @@ public class ContainerHandler extends UiHandler implements Initializable {
     @FXML
     private BubblePane tooltip;
 
+    private BubbleStage faceFlowbox;
+
+    public final static Map<String, String> faceMap = new HashMap<>();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         bindDrag($(container, "#container-bar", AnchorPane.class));
@@ -56,6 +67,29 @@ public class ContainerHandler extends UiHandler implements Initializable {
                 });
         Button button = $(edit, ".button", Button.class);
         button.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> textEdit.requestFocus());
+
+        faceFlowbox = new BubbleStage();
+        try {
+            Parent load = FXMLLoader.load(ContainerHandler.class.getResource("/fxml/container/face_panel.fxml"));
+            faceFlowbox.setScene(new Scene(load));
+            ObservableList<Node> childrenUnmodifiable = load.getChildrenUnmodifiable();
+            childrenUnmodifiable.forEach(node -> {
+                node.hoverProperty().addListener((abs, o, n) -> {
+                    if (n) {
+                        node.getStyleClass().add("hover");
+                    } else {
+                        node.getStyleClass().remove("hover");
+                    }
+                });
+                String code = (String) node.getUserData();
+                node.setOnMouseClicked(event -> {
+                    textEdit.appendText(code);
+                });
+                faceMap.put(code, $(node, ".image-view", ImageView.class).getImage().getUrl());
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -66,11 +100,24 @@ public class ContainerHandler extends UiHandler implements Initializable {
             textEdit.setText("");
             tooltip.show();
         } else {
-            Node msgPane = TalkBuilder.build(Talk.RIGHT_TALK, "骨王", text.trim());
             ObservableList<Node> items = msgView.getItems();
-            items.add(msgPane);
+            items.add(TalkBuilder.build(Talk.RIGHT_TALK, "骨王", text.trim()));
             msgView.scrollTo(items.size());
             textEdit.setText("");
         }
+    }
+
+    public void doFace(MouseEvent event) {
+        EventTarget target = event.getTarget();
+        if (!(target instanceof OctIconView)) {
+            return;
+        }
+        boolean bind = faceFlowbox.bind(container);
+        Window window = container.getScene().getWindow();
+        double x = window.getX() + 280;
+        double y = window.getY() + window.getHeight() - 280;
+        faceFlowbox.setX(x);
+        faceFlowbox.setY(y);
+        faceFlowbox.show();
     }
 }

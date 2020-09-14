@@ -61,6 +61,7 @@ public abstract class UiHandler {
 
     /**
      * 窗口拖动事件绑定
+     *
      * @param source 组件
      */
     public void bindDrag(Node source) {
@@ -91,9 +92,10 @@ public abstract class UiHandler {
 
     /**
      * 检索子组件
-     * @param parent 父组件
+     *
+     * @param parent   父组件
      * @param selector 选择器
-     * @param clazz 子组件类型
+     * @param clazz    子组件类型
      * @return 如果命中则放回 clazz 类型组件,否则返回null
      */
     @SuppressWarnings("unchecked")
@@ -106,6 +108,7 @@ public abstract class UiHandler {
 
     /**
      * 最小化
+     *
      * @param event 鼠标事件
      */
     public void doSmall(MouseEvent event) {
@@ -122,6 +125,7 @@ public abstract class UiHandler {
 
     /**
      * 最大化
+     *
      * @param event 鼠标事件
      */
     public void doExit(MouseEvent event) {
