@@ -41,15 +41,15 @@ public class TalkBuilder {
         int index = 0;
         while (matcher.find()) {
             String face = matcher.group();
-            int i = msg.indexOf(msg, index);
+            int i = msg.indexOf(face, index);
             if (ContainerHandler.faceMap.containsKey(face)) {
-                if (index != i) {
+                if (index < i) {
                     children.add(new Text(msg.substring(index, i)));
                     index = i;
                 }
                 ImageView imageView = new ImageView(ContainerHandler.faceMap.get(face));
-                imageView.setFitWidth(23.0);
-                imageView.setFitHeight(23.0);
+                imageView.setFitWidth(20.0);
+                imageView.setFitHeight(20.0);
                 children.add(imageView);
                 index += face.length();
             }
