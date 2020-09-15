@@ -13,5 +13,8 @@
 .menu > .glyph-icon {
     -fx-fill: #6e6e6e;
 }
-/** end */
 
+.menu > .active {
+    -fx-fill: #07c060;
+}
+/** end */

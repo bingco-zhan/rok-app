@@ -67,7 +67,6 @@ public class ContainerHandler extends UiHandler implements Initializable {
                 });
         Button button = $(edit, ".button", Button.class);
         button.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> textEdit.requestFocus());
-
         faceFlowbox = new BubbleStage();
         try {
             Parent load = FXMLLoader.load(ContainerHandler.class.getResource("/fxml/container/face_panel.fxml"));
@@ -91,7 +90,6 @@ public class ContainerHandler extends UiHandler implements Initializable {
             e.printStackTrace();
         }
     }
-
 
     public void doTalk(MouseEvent event) throws IOException {
         // 发送了空文本
