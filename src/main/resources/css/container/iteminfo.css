@@ -1,0 +1,8 @@
+/** 主页整体颜色配置 */
+@import url('../../css/login.css');
+.iteminfo {
+    -fx-background-color: #f3f3f3;
+    -fx-border-width: 1px 1px 1px 0;
+    -fx-border-color: #e6e5e4;
+    -fx-font-family: "Microsoft YaHei";
+}

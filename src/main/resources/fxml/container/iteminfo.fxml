@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="484.0" prefWidth="452.0" styleClass="iteminfo" stylesheets="@../../css/container/iteminfo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rok.app.handler.ItemInfoHandler">
+    <VBox prefHeight="482.0" prefWidth="452.0">
+        <AnchorPane id="container-bar" prefHeight="28.0" prefWidth="462.0">
+            <FontAwesomeIconView glyphName="MINUS" layoutX="404.0" layoutY="20.0" onMouseClicked="#doSmall" size="15" styleClass="small-icon" />
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="428.0" layoutY="19.0" onMouseClicked="#doExit" size="16" styleClass="exit-icon" />
+        </AnchorPane>
+      <AnchorPane prefHeight="455.0" prefWidth="452.0" />
+    </VBox>
+</AnchorPane>

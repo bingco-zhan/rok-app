@@ -115,7 +115,7 @@ public class ContainerHandler extends UiHandler implements Initializable {
         boolean bind = faceFlowbox.bind(container);
         Window window = container.getScene().getWindow();
         double x = window.getX() + 280;
-        double y = window.getY() + window.getHeight() - 280;
+        double y = window.getY() + window.getHeight() - 260;
         faceFlowbox.setX(x);
         faceFlowbox.setY(y);
         faceFlowbox.show();

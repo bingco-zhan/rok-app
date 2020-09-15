@@ -21,6 +21,7 @@
                 </padding>
             </TextField>
             <Icons525View glyphName="SEARCH" layoutX="30.0" layoutY="27.0"/>
+            <MaterialDesignIconView glyphName="CLOSE" layoutX="163.0" layoutY="26.0"/>
             <Button layoutX="195.0" layoutY="11.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="13.0"
                     textAlignment="CENTER">
                 <graphic>
@@ -31,9 +32,9 @@
                     <Font size="10.0"/>
                 </font>
             </Button>
-            <MaterialDesignIconView glyphName="CLOSE" layoutX="163.0" layoutY="26.0"/>
         </AnchorPane>
         <ListView prefHeight="444.0" prefWidth="246.0">
+            <fx:include source="split.fxml"/>
             <fx:include source="item.fxml"/>
             <fx:include source="item.fxml"/>
             <fx:include source="item.fxml"/>
