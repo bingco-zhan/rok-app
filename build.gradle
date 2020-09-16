@@ -44,5 +44,4 @@ javafx {
 
 application {
     mainClassName = 'com.rok.app.Bootstrap'
-//    mainClassName = 'com.rok.app.EmojiTextAreaTest'
 }
